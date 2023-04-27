@@ -1,0 +1,15 @@
+require 'pry'
+
+def can_win_nim(n)
+  require 'pry'; binding.pry
+  if n == 4
+    false
+  else
+    true
+  end
+end
+
+test1 = can_win_nim(n=4)
+test2 = can_win_nim(n=1)
+test3 = can_win_nim(n=2)
+test4 = can_win_nim(n=245)

@@ -10,25 +10,28 @@ def is_anagram(s, t)
     # else
     #     false
     # end
-    hashmap = Hash.new(0)
+    hash = Hash.new(0)
     if s.length != t.length
         false
     elsif
         for lett in s.chars
-            hashmap[lett] += 1
+            hash[lett] += 1
         end
 
-        for let in t.chars
-            hashmap[let] -= 1
+        for lett in t.chars
+            # require 'pry'; binding.pry
+            hash[lett] -= 1
         end
-        if !hashmap.any? { |k,v| v != 0 }
+        
+        if !hash.any? { |k,v| v != 0 }
             true
         else
             false
         end
     end
+    require 'pry'; binding.pry
 end
 
-test_1 = is_anagram(s = "anagram", t = "nagaram")
+# test_1 = is_anagram(s = "anagram", t = "nagaram")
 test_2 = is_anagram(s = "rat", t = "car")
 require 'pry'; binding.pry

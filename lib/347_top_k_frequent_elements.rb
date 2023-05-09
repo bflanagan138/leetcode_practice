@@ -5,9 +5,8 @@ require 'pry'
 def top_k_frequent(nums, k)
   hash = Hash.new(0)
   nums.each { |num| hash[num] += 1}
-  sorted = hash.sort_by { |k, v| -v }
+  sorted = hash.sort_by { |key, v| -v }
   sorted.map { |a| a.first }.first(k)
-
 end
 
 test1 = top_k_frequent([1,1,1,2,2,3], 2)

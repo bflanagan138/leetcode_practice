@@ -6,6 +6,7 @@ require 'pry'
 
 def product_except_self(nums)
   output = []
+  # numbers = nums
   nums.each do |num| 
     if !nums.include?(0)
       output << ( nums.inject(:*) / num )
@@ -13,12 +14,11 @@ def product_except_self(nums)
       # output << nums.inject(:*)
     else
       container = []
-      numbers = nums
       nums.each do |num|
         numbers.delete_if do |num|
           num == 0
         end
-        # require 'pry'; binding.pry
+        require 'pry'; binding.pry
         output << numbers.inject(:*) 
       end
     end

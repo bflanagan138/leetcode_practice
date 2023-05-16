@@ -12,7 +12,6 @@ def is_valid(s)
     else
       false
     end
-    require 'pry'; binding.pry
   end
 end
 

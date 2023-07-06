@@ -17,7 +17,7 @@ require 'pry'
 # two pointers method
 
 # def is_palindrome(s)
-#   letters = s.gsub(/[^0-9a-z]/, '').downcase
+#   letters = s.downcase.gsub(/[^0-9a-z]/, '')
 #   return true if letters.length <= 1
 
 #   left = 0

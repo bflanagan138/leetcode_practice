@@ -1,14 +1,13 @@
 require 'pry'
-# convert nums to hash with index (can't do, overwrites key when duplicate)
-# find numbers that are the same
-# subtract their indexes
+
 def contains_nearby_duplicate(nums, k)
   if nums.uniq == nums
     false
-  elsif
-  indexes = []
-  nums.each_with_index do |num, ind|
-    indexes << ind
+  else
+    indexes = []
+    nums.each_with_index do |num, ind|
+      indexes << ind
+    end
   end
 
   num_ind = {}
@@ -20,22 +19,32 @@ def contains_nearby_duplicate(nums, k)
     end
   end
 
-    multiples = []
-    num_ind.values.each do |val|
-      if val.count != 1
-        multiples = val
-      end
+  multiples = []
+  num_ind.values.each do |val|
+    if val.count != 1
+      multiples = val
     end
+  end
   
-  
-    output = []
-   
-    multiples.length - 1.times do 
-      output << (multiples[0] - multiples[1]).abs
-      multiples.pop
+  output = []
+  until multiples.length == 1
+    output << (multiples[0] - multiples[1]).abs
+    multiples.shift
+  end
+
+  answers = []
+  output.each do |out|
+    if out <= k 
+      answers << true
+    else
+      answers << false
     end
-  #  require 'pry'; binding.pry
-  #   output.any?()
+  end
+
+  if answers.include?(true)
+    true
+  else
+    false
   end
 end
 

@@ -5,11 +5,11 @@ require 'pry'
 #return max value of sub array
 
 def maximum_wealth(accounts)
-  totals = []
-  accounts.each do |acct|
-    totals << acct.sum
+  # totals = []
+  output = accounts.collect do |acct|
+    acct.sum
   end
-  totals.max
+  output.max
 end
 
 test1 = maximum_wealth([[1,2,3],[3,2,1]])

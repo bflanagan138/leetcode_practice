@@ -22,9 +22,7 @@ def remove_element(nums, val)
       chars += 1
     end
   end
-    require 'pry'; binding.pry
   return chars, nums
 end
 
 test1 = remove_element([3,2,2,3], 3)
-require 'pry'; binding.pry

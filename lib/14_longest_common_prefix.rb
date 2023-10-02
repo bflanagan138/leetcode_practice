@@ -32,11 +32,18 @@ require 'pry'
 
 def longest_common_prefix(strs)
   return strs[0] if strs.uniq.count == 1
-
+  base = []
+  strs.each do |len|
+    base << len.length
+  end
+  
+  base_val = base.min
   prefix = ""
   letter = []
   counter = 0
 
+  return "" if base_val == 0 
+  
   until letter.uniq.count > 1
     letter.clear
     strs.each do |str|
@@ -52,4 +59,5 @@ test1 = longest_common_prefix(["flower","flow","flight"])
 test2 = longest_common_prefix(["dog","racecar","car"])
 test3 = longest_common_prefix(["brain", "brave", "brat"])
 test4 = longest_common_prefix(["cir","car"])
+test5 = longest_common_prefix(["", "base"])
 require 'pry'; binding.pry

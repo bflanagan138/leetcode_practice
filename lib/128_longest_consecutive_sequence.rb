@@ -1,13 +1,14 @@
 require 'pry'
 
 def longest_consecutive(nums)
-    hash = Hash.new
+    sorted_hash = Hash.new
     sorted = nums.uniq.sort
-    require 'pry'; binding.pry
     sorted.each_with_index do |num, ind|
-      hash[num] = ind
+      sorted_hash[num] = ind
     end
-    
+    counter = 0
+    sorted_hash
+    require 'pry'; binding.pry
 end
 
 test1 = longest_consecutive([100,4,200,1,3,2])

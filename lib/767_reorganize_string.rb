@@ -7,6 +7,7 @@ def reorganize_string(s)
   counts = Hash.new(0)
   letters.each { |char| counts[char] += 1}
   return "" if (total_chars / 2) <= counts.values.max
+  
 end
 
 # test1 = reorganize_string("aab")
